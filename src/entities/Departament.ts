@@ -4,21 +4,21 @@ import { v4 as uuid } from "uuid"
 @Entity("Departaments")
 export class Departament {
 
-    @PrimaryColumn("id_departament")
-    id: string;
+    @PrimaryColumn()
+    id_departament: string;
 
-    @Column("Name")
-    name: string;
+    @Column()
+    Name: string;
 
-    @Column("acronym")
+    @Column()
     acronym: string;
 
     @CreateDateColumn()
     created_at: Date;
 
     constructor() {
-        if(!this.id) {
-            this.id = uuid();
+        if(!this.id_departament) {
+            this.id_departament = uuid();
         }
     }
 }

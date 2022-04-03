@@ -5,19 +5,19 @@ import { v4 as uuid } from "uuid"
 @Entity("Employee")
 export class Employee {
 
-    @PrimaryColumn("id_employee")
-    id: string;
+    @PrimaryColumn()
+    id_employee: string;
 
-    @Column("Name")
-    name: string;
+    @Column()
+    Name: string;
 
-    @Column("img")
+    @Column()
     img: string;
 
-    @Column("rg")
+    @Column()
     rg: string;
 
-    @Column("id_departament")
+    @Column()
     id_departament: string;
 
     @ManyToOne(() => Departament)
@@ -28,8 +28,8 @@ export class Employee {
     created_at: Date;
 
     constructor() {
-        if(!this.id) {
-            this.id = uuid();
+        if(!this.id_employee) {
+            this.id_employee = uuid();
         }
     }
 }

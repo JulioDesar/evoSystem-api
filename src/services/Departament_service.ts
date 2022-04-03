@@ -2,21 +2,21 @@ import { getRepository } from 'typeorm';
 import { Departament } from '../entities/Departament';
 
 type DepartamentRequest = {
-    name: string;
+    Name: string;
     acronym: string;
 }
 
 export class Departament_service {
 
-    async execute({ name, acronym }: DepartamentRequest): Promise<Departament | Error> {
+    async execute({ Name, acronym }: DepartamentRequest): Promise<Departament | Error> {
         const repo = getRepository(Departament);
 
-        if(await repo.findOneBy({ name })) {
+       /* if(await repo.findOne({ })) {
             return new Error("Departamento já existe");
-        }
+        }*/
 
         const departament = repo.create({
-            name,
+            Name,
             acronym
         });
 
