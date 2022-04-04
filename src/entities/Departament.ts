@@ -13,8 +13,8 @@ export class Departament {
     @Column()
     acronym: string;
 
-    @CreateDateColumn()
-    created_at: Date;
+    /*@CreateDateColumn()
+    created_at: Date;*/
 
     constructor() {
         if(!this.id_departament) {

@@ -11,9 +11,10 @@ export class Departament_service {
     async execute({ Name, acronym }: DepartamentRequest): Promise<Departament | Error> {
         const repo = getRepository(Departament);
 
-       /* if(await repo.findOne({ })) {
+        //SELECT * FROM Departaments WHERE Name = "Name"
+        if(await repo.findOne({ Name })) {
             return new Error("Departamento já existe");
-        }*/
+        }
 
         const departament = repo.create({
             Name,
