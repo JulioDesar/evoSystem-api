@@ -22,11 +22,11 @@ export class CreateDepartaments1648948401338 implements MigrationInterface {
                         type: "varchar",
                         isUnique: true
                     },
-                    {
+                   /* {
                         name: "CREATED_AT",
                         type: "timestamp",
                         default: "now()"
-                    }
+                    }*/
                 ]
             })
         )

@@ -29,11 +29,11 @@ export class CreateEmployee1648950776341 implements MigrationInterface {
                         name: "id_departament",
                         type: "uuid",
                     },
-                    {
+                    /*{
                         name: "CREATED_AT",
                         type: "timestamp",
                         default: "now()"
-                    }
+                    }*/
                 ],
                 foreignKeys: [
                     {
