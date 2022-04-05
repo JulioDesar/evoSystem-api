@@ -1,24 +1,24 @@
 import {Entity, Column, CreateDateColumn, PrimaryColumn} from "typeorm"
 import { v4 as uuid } from "uuid"
 
-@Entity("Departaments")
+@Entity("departamento")
 export class Departament {
 
-    @PrimaryColumn()
-    id_departament: string;
+    @PrimaryColumn("uuid")
+    id_departamento: string;
 
     @Column()
-    Name: string;
+    nome: string;
 
     @Column()
-    acronym: string;
+    sigla: string;
 
     /*@CreateDateColumn()
     created_at: Date;*/
 
     constructor() {
-        if(!this.id_departament) {
-            this.id_departament = uuid();
+        if(!this.id_departamento) {
+            this.id_departamento = uuid();
         }
     }
 }

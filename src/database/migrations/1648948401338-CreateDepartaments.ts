@@ -5,20 +5,20 @@ export class CreateDepartaments1648948401338 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "Departaments",
+                name: "departamento",
                 columns: [
                     {
-                        name: "id_departament",
+                        name: "id_departamento",
                         type: "uuid",
                         isPrimary: true
                     },
                     {
-                        name: "Name",
+                        name: "nome",
                         type: "varchar",
                         isUnique: true
                     },
                     {
-                        name: "acronym",
+                        name: "sigla",
                         type: "varchar",
                         isUnique: true
                     },
@@ -33,7 +33,7 @@ export class CreateDepartaments1648948401338 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("Departaments");
+        await queryRunner.dropTable("departamento");
     }
 
 }

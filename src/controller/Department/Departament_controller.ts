@@ -1,14 +1,14 @@
-import { Departament_service } from './../services/Departament_service';
+import { Departament_service } from '../../services/Department/Departament_service';
 import { Request, Response } from "express";
 
 
 export class Departament_controller {
     async handle(request: Request, response: Response) {
-        const { Name, acronym } = request.body;
+        const { nome, sigla } = request.body;
 
         const service = new Departament_service();
 
-        const result = service.execute({ Name, acronym });
+        const result = await service.execute({ nome, sigla });
 
         if(result instanceof Error) {
             return response.status(400).json(result.message);

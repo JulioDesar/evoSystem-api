@@ -1,5 +1,4 @@
 import "reflect-metadata";
-
 import express from "express";
 
 import "./database"
@@ -9,4 +8,4 @@ const app = express();
 
 app.use(routes);
 
-app.listen(8081, () => console.log("Server is running"));
+app.listen(8081);
