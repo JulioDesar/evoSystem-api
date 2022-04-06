@@ -5,15 +5,15 @@ export class CreateEmployee1648950776341 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "Employee",
+                name: "funcionario",
                 columns: [
                     {
-                        name: "id_employee",
+                        name: "id_funcionario",
                         type: "uuid",
                         isPrimary: true
                     },
                     {
-                        name: "Name",
+                        name: "nome",
                         type: "varchar",
                     },
                     {
@@ -26,7 +26,7 @@ export class CreateEmployee1648950776341 implements MigrationInterface {
                         isUnique: true
                     },
                     {
-                        name: "id_departament",
+                        name: "id_departamento",
                         type: "uuid",
                     },
                     /*{
@@ -37,10 +37,10 @@ export class CreateEmployee1648950776341 implements MigrationInterface {
                 ],
                 foreignKeys: [
                     {
-                        name: "fk_employee_departament",
-                        columnNames: ["id_departament"],
-                        referencedTableName: "Departaments",
-                        referencedColumnNames: ["id_departament"]
+                        name: "funcionario_id_departamento_fkey",
+                        columnNames: ["id_departamento"],
+                        referencedTableName: "departamento",
+                        referencedColumnNames: ["id_departamento"]
                     }
                 ]
             })
@@ -48,7 +48,7 @@ export class CreateEmployee1648950776341 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("Employee");
+        await queryRunner.dropTable("funcionario");
     }
 
 }
